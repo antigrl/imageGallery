@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Input from '../presentational/Input';
+import PropTypes from 'prop-types';
+import { Wrapper, Overlay, Viewport, Item, Content, Element, CloseBtn, Cross } from '../presentational/Modal';
 
-class ModalContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      seo_title: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(event) {
-    this.setState({ [event.target.id]: event.target.value });
-  }
+class ModalContainer extends Component { 
   render() {
-    const { seo_title } = this.state;
+    if(!this.props.visible) {
+      return null;
+    }
+    console.log('rendering modal container');
+    console.log(this.props);
     return (
-      <form id="article-form">
-        <Input
-          text="SEO title"
-          label="seo_title"
-          type="text"
-          id="seo_title"
-          value={seo_title}
-          handleChange={this.handleChange}
-        />
-      </form>
+      <Wrapper visible={this.props.visible} tabindex="0">
+        <Overlay visible={this.props.visible} />
+        <Viewport>
+          <Item>
+            <Content>
+              <Element src={this.props.image.url}/>
+            </Content>
+          </Item>
+        </Viewport>
+        <CloseBtn onClick={this.props.onClose}>
+          <Cross />
+        </CloseBtn>
+      </Wrapper>
     );
   }
 }
+
 export default ModalContainer;

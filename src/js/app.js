@@ -8,10 +8,7 @@ import ModalContainer from './components/container/ModalContainer';
 class Main extends React.Component {
   render() {
     return (
-      <div>
-        <GridContainer />
-        
-      </div>
+      <GridContainer />
     )
   }
 }
