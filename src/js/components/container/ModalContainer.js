@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import Input from "../presentational/Input";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Input from '../presentational/Input';
 
 class ModalContainer extends Component {
   constructor() {

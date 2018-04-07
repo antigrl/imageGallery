@@ -1,13 +1,17 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
-import baseStyles from './components/presentational/Base'
-import ModalContainer from "./components/container/ModalContainer";
+import baseStyles from './components/presentational/Base';
+import GridContainer from './components/container/GridContainer';
+import ModalContainer from './components/container/ModalContainer';
 
 class Main extends React.Component {
   render() {
     return (
-      <ModalContainer />
+      <div>
+        <GridContainer />
+        
+      </div>
     )
   }
 }
