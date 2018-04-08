@@ -6,6 +6,7 @@ ${styledNormalize}
 
 body {
   padding: 0;
+  overflow: auto;
 }
 
 *,

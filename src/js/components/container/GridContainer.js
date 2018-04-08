@@ -19,10 +19,21 @@ class GridContainer extends Component {
   }
 
   toggleModal(item) {
-    this.setState({
-      photoIndex: item,
-      showModal: !this.state.showModal
-    });
+    if (this.state.showModal) {
+      this.setState({
+        photoIndex: item,
+        showModal: false
+      });
+      document.body.style.overflow = '';
+    }
+    else {
+      this.setState({
+        photoIndex: item,
+        showModal: true
+      });
+      document.body.style.overflow = 'hidden';
+    }
+
   }
 
   componentDidMount() {
