@@ -25,8 +25,8 @@ export const GridList = styled.ul`
   padding: 0;
   margin: 0 -0.5rem;
   & > * {
-    width: 100%;
     padding: 0.5rem;
+    flex-basis: 100%;
     @media (min-width: 32em) {
       flex-basis: 45%;
     }
@@ -40,10 +40,8 @@ export const GridList = styled.ul`
 `;
 
 export const GridItem = styled.li`
-  background-color: black;
-  margin: 0.5rem;
-  text-align: center;
   min-height: 150px;
+  display: flex;
   a {
     display: block;
     margin: 0 auto;

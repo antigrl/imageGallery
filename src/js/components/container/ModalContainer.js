@@ -5,18 +5,13 @@ import InputContainer from './InputContainer';
 
 class ModalContainer extends Component {
   render() {
-    if(!this.props.visible) {
-      return null;
-    }
-    console.log('rendering modal container');
-    console.log(this.props);
     return (
       <Wrapper id={this.props.image.id} visible={this.props.visible} tabindex="0">
         <Overlay visible={this.props.visible} />
         <Viewport>
           <Item>
             <Content>
-              <Element>
+              <Element visible={this.props.visible}>
                 <img src={this.props.image.url} alt={this.props.image.title} />
                 <Caption>{this.props.image.title}</Caption>
                 <InputContainer num={this.props.image.id}/>

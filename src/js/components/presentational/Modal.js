@@ -8,8 +8,10 @@ export const Wrapper = styled.div`
   left: 0;
   width: 100%;
   z-index: 10;
+  visibility: ${props => props.visible ? 'visible' : 'hidden'};
+  transform: translateY(${props => props.visible ? '0' : '100%'});
   opacity: ${props => props.visible ? '1' : '0'};
-  transition: all 500ms ease;
+  transition: opacity 500ms ease;
 `;
 
 export const Overlay = styled.div`
@@ -17,8 +19,6 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,.75);
-  opacity: ${props => props.visible ? '1' : '0'};
-  transition: all 500ms ease;
 `;
 
 export const Viewport = styled.div`
@@ -42,7 +42,7 @@ export const Content = styled.div`
 `;
 
 export const Element = styled.div`
-  display: block;
+  opacity: ${props => props.visible ? '1' : '0'};
   position: absolute;
   top: 50%;
   left: 50%;
@@ -50,6 +50,7 @@ export const Element = styled.div`
   max-height: 100%;
   width: 90%;
   transform: translate(-50%, -50%);
+  transition: opacity 500ms ease 500ms;
   img {
     max-height: 80vh;
 
@@ -84,8 +85,7 @@ export const CloseBtn = styled.button`
   right: 0;
 `;
 
-export const Cross = styled.span`
-  display: block;
+export const Cross = styled.div`
   position: relative;
   width: 1.75rem;
   height: 1.75rem;

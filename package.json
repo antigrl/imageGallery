@@ -4,12 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode=development",
-    "build": "webpack --mode=development"
+    "start": "webpack-dev-server --open --mode=production",
+    "build": "webpack --mode=production"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Kim Ward",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
@@ -29,6 +27,8 @@
     "npm": ">=5.6.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "isomorphic-fetch": "^2.2.1",
     "styled-components": "^3.2.5",
     "styled-normalize": "^4.0.0"
   }
