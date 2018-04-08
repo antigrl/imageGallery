@@ -3,10 +3,9 @@ import ReactDom from 'react-dom';
 import styled from 'styled-components';
 import { Wrapper, GridList, GridItem } from '../presentational/Grid';
 import ModalContainer from './ModalContainer';
-
 const size = 25;
 
-class GridContainer extends React.Component {
+class GridContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +16,6 @@ class GridContainer extends React.Component {
     this.toggleModal = this.toggleModal.bind(this);
 
   }
-
 
   toggleModal(item) {
     this.setState({

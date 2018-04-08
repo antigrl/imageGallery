@@ -41,6 +41,11 @@ export const GridList = styled.ul`
 
 export const GridItem = styled.li`
   background-color: black;
-  height: 10rem;
   margin: 0.5rem;
+  text-align: center;
+  min-height: 150px;
+  a {
+    display: block;
+    margin: 0 auto;
+  }
 `;

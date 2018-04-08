@@ -24,6 +24,7 @@ export const Overlay = styled.div`
 export const Viewport = styled.div`
   position: relative;
   height: 100%;
+  overflow-y: auto;
 `;
 
 export const Item = styled.div`
@@ -40,14 +41,36 @@ export const Content = styled.div`
   height: 100%;
 `;
 
-export const Element = styled.img`
+export const Element = styled.div`
   display: block;
-  position: relative;
+  position: absolute;
   top: 50%;
+  left: 50%;
   max-width: 100%;
   max-height: 100%;
-  margin: auto;
-  transform: translateY(-50%);
+  width: 90%;
+  transform: translate(-50%, -50%);
+  img {
+    max-height: 80vh;
+
+    margin: 0 auto;
+    @media (min-width: 48em) {
+      width: 50%;
+      float: left;
+    }
+  }
+`;
+
+export const Caption = styled.p`
+  overflow: hidden;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 2rem;
+  margin: 0 0 1rem;
+  text-align: center;
+  @media (min-width: 48em) {
+    text-align: left;
+  }
 `;
 
 export const CloseBtn = styled.button`
